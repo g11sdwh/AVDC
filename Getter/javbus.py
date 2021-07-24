@@ -144,7 +144,7 @@ def getTag(htmlcode):  # 获取标签
 def find_number(number):
     # =======================================================================有码搜索
     if not (re.match('^\d{4,}', number) or re.match('n\d{4}', number) or 'HEYZO' in number.upper()):
-        htmlcode = get_html('https://www.javbus.com/search/' + number + '&type=1')
+        htmlcode = get_html('https://www.seedmm.bar/search/' + number + '&type=1')
         html = etree.fromstring(htmlcode, etree.HTMLParser())  # //table/tr[1]/td[1]/text()
         counts = len(html.xpath("//div[@id='waterfall']/div[@id='waterfall']/div"))
         if counts != 0:
@@ -157,7 +157,7 @@ def find_number(number):
                         "//div[@id='waterfall']/div[@id='waterfall']/div[" + str(count) + "]/a[@class='movie-box']/@href")[0]
                     return result_url
     # =======================================================================无码搜索
-    htmlcode = get_html('https://www.javbus.com/uncensored/search/' + number + '&type=1')
+    htmlcode = get_html('https://www.seedmm.bar/uncensored/search/' + number + '&type=1')
     html = etree.fromstring(htmlcode, etree.HTMLParser())  # //table/tr[1]/td[1]/text()
     counts = len(html.xpath("//div[@id='waterfall']/div[@id='waterfall']/div"))
     if counts == 0:
